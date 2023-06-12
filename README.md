@@ -81,7 +81,10 @@ for result in results:
     print(f"Similarity: {result[0]} \nTitle: {result[1]} \nText: {result[2]}\n")
 ```
 
-### Output
+### Input:
+```search_text = "How can I match texts?"```
+
+### Output:
 ```
 Similarity: 0.88447416 
 Title: TextMatcher 
