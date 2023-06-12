@@ -81,6 +81,24 @@ for result in results:
     print(f"Similarity: {result[0]} \nTitle: {result[1]} \nText: {result[2]}\n")
 ```
 
+### Output
+```
+Similarity: 0.88447416 
+Title: TextMatcher 
+Link: https://sparknlp.org/docs/en/annotators#textmatcher 
+Text: Annotator to match exact phrases (by token) provided in a file against a Document. A text file of predefined phrases must be provided with setEntities. For extended examples of usage, see the Examples and the TextMatcherTestSpec.
+
+Similarity: 0.85778445 
+Title: ChunkEmbeddings 
+Link: https://sparknlp.org/docs/en/annotators#chunkembeddings 
+Text: This annotator utilizes WordEmbeddings, BertEmbeddings etc. to generate chunk embeddings from either Chunker, NGramGenerator, or NerConverter outputs.For extended examples of usage, see the Examples and the ChunkEmbeddingsTestSpec.
+
+Similarity: 0.8391215 
+Title: ChunkTokenizer 
+Link: https://sparknlp.org/docs/en/annotators#chunktokenizer 
+Text: Tokenizes and flattens extracted NER chunks.The ChunkTokenizer will split the extracted NER CHUNK type Annotations and will create TOKEN type Annotations. The result is then flattened, resulting in a single array.For extended examples of usage, see the ChunkTokenizerTestSpec.
+```
+
 ### Testing
 To run the unittest for this project, run the following command:
 
