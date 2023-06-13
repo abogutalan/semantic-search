@@ -96,7 +96,7 @@ class TestSemanticSearchService(unittest.TestCase):
             actual_results = self.semantic_search_service.semantic_search(query, self.index_name)
 
             # Assert that the actual results match the expected results
-            self.assertEqual(round(actual_results[0][0], 2), round(actual_results[0][0], 2))
+            self.assertEqual(round(actual_results[0][0], 2), round(expected_results[0][0], 2))
 
 # Run the unittest
 if __name__ == "__main__":

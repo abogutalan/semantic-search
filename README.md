@@ -24,6 +24,8 @@ This will install the following packages:
 * openai
 * pandas
 * elasticsearch
+* requests
+* BeautifulSoup
 
 
 ### Docker run:
@@ -34,10 +36,25 @@ This will install the following packages:
 >export OPENAI_API_KEY=<your_openai_api_key>
 
 ### Code run:
+>python spark_nlp_scraper.py
 >python semantic_search_service.py
 
+
 ### Usage
-To use the semantic search service, you need to follow these steps:
+##### SparkNLPAnnotatorScraper
+
+The SparkNLPAnnotatorScraper class is used to scrape the SparkNLP Annotator documentation and extract the title, text, and link of each section.
+You can use it like this:
+```
+from SparkNLPAnnotatorScraper import SparkNLPAnnotatorScraper
+
+# Use the class to scrape the website and save the data to a CSV
+scraper = SparkNLPAnnotatorScraper()
+scraper.scrape_website()
+scraper.to_csv('annotators.csv')
+```
+
+##### To use the semantic search service, you need to follow these steps:
 
 1. Create an instance of the SemanticSearchService class by passing your OpenAI API key and Elasticsearch client as arguments.
 2. Call the index_data method with your data set (a pandas DataFrame with Title and Text columns) and an index name as arguments. This will index your data set with embeddings in Elasticsearch.
@@ -82,24 +99,30 @@ for result in results:
 ```
 
 ### Input:
-```search_text = "How can I match texts?"```
+```search_text = "How to convert token to chunk?"```
 
 ### Output:
 ```
-Similarity: 0.88447416 
-Title: TextMatcher 
-Link: https://sparknlp.org/docs/en/annotators#textmatcher 
-Text: Annotator to match exact phrases (by token) provided in a file against a Document. A text file of predefined phrases must be provided with setEntities. For extended examples of usage, see the Examples and the TextMatcherTestSpec.
+Similarity: 0.913725 
+Title: token2chunk 
+Link: https://sparknlp.org/docs/en/annotators#token2chunk
 
-Similarity: 0.85778445 
-Title: ChunkEmbeddings 
-Link: https://sparknlp.org/docs/en/annotators#chunkembeddings 
-Text: This annotator utilizes WordEmbeddings, BertEmbeddings etc. to generate chunk embeddings from either Chunker, NGramGenerator, or NerConverter outputs.For extended examples of usage, see the Examples and the ChunkEmbeddingsTestSpec.
+Similarity: 0.89781594 
+Title: stopwordscleaner 
+Link: https://sparknlp.org/docs/en/annotators#stopwordscleaner
 
-Similarity: 0.8391215 
-Title: ChunkTokenizer 
-Link: https://sparknlp.org/docs/en/annotators#chunktokenizer 
-Text: Tokenizes and flattens extracted NER chunks.The ChunkTokenizer will split the extracted NER CHUNK type Annotations and will create TOKEN type Annotations. The result is then flattened, resulting in a single array.For extended examples of usage, see the ChunkTokenizerTestSpec.
+Similarity: 0.89720714 
+Title: chunktokenizer 
+Link: https://sparknlp.org/docs/en/annotators#chunktokenizer
+
+Similarity: 0.89308345 
+Title: chunk2doc 
+Link: https://sparknlp.org/docs/en/annotators#chunk2doc
+
+Similarity: 0.88517475 
+Title: nerconverter 
+Link: https://sparknlp.org/docs/en/annotators#nerconverter
+
 ```
 
 ### Testing
