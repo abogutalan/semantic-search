@@ -37,6 +37,7 @@ This will install the following packages:
 
 ### Code run:
 >python spark_nlp_scraper.py
+>python indexer.py 
 >python semantic_search_service.py
 
 

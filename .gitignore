@@ -1,0 +1,13 @@
+# .gitignore
+
+# Ignore cache files and directories
+*.pyc
+__pycache__/
+
+# Ignore Python virtual environments
+venv/
+
+# Ignore specific data file
+annotators.csv
+output.txt
+feedback.md
